@@ -15,7 +15,7 @@
     <link rel="stylesheet" media="screen" type="text/css" href="css/font-awesome-4.6.3/css/font-awesome.css">
 
     <script type="text/javascript" src="js/colorpicker.js"></script>
-
+    <script src="layer/layer.js"></script>
 <script>
 
     $(function() {
@@ -37,10 +37,10 @@
     <div class="tabbed round">
         <ul class="option-name">
 
-            <li><h3>Settings</h3></li>
-            <li><h3>Shape</h3></li>
-            <li><h3>Tool</h3></li>
-            <li><h3>Edit</h3></li>
+            <li><h3>SETTINGS</h3></li>
+            <li><h3>SHAPE</h3></li>
+            <li><h3>TOOL</h3></li>
+            <li><h3>EDIT</h3></li>
         </ul>
     </div>
     <div class="Drawer-board">
@@ -71,7 +71,7 @@
                 <img src="images/line.png" data-f="line" />
             </li>
             <li class="line">
-                <span class="Label">Width:</span>
+                <span class="Label">WIDTH:</span>
                 <section class="select-line">
                         <select id="s-line" style="width:100px" onchange="select()">
                             <option value="1">1px</option>
@@ -87,7 +87,7 @@
                             <option value="24">24px</option>
                         </select>
                 </section>
-                <span class="Label">Color:</span>
+                <span class="Label">COLOR:</span>
                 <section id="colorSelector">
 
                 </section>
@@ -96,16 +96,26 @@
         </ul>
 
         <div class="right-box" id="container">
-            <canvas id="sketch" width="700" height="700" ></canvas>
+            <canvas id="sketch" width="600" height="600" ></canvas>
 
         </div>
-        <a href="Start.html" class="btn-back"><span class="icon-arrow-left2"></span><div class="Back">Back</div></a>
-        <a href="dataset.html" class="btn-find"><div class="search">Search</div><span class="icon-arrow-right2"></span></a>
+        <a href="javascript:;" class="btn-back"><span class="icon-arrow-left2"></span><div class="Back">Back</div></a>
+        <a href="javascript:;" class="btn-find"><div class="search">Search</div><span class="icon-arrow-right2"></span></a>
     </div>
 
 </div>
 
 </body>
 <script type="text/javascript" src="js/drawer.js"></script>
+<script>
+    var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+    $('.Back').click(function(){
+        parent.layer.close(index);
+    });
+    $('.search').click(function(){
+        parent.layer.close(index);
+        window.location.href="dataset.html";
+    });
 
+</script>
 </html>

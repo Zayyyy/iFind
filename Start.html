@@ -8,11 +8,14 @@
     <link href="css/basic.css" rel="stylesheet" type="text/css"/>
     <link href="css/start.css" rel="stylesheet" type="text/css"/>
     <script src="js/snap.svg-min.js"></script>
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="layer/layer.js"></script>
+
 </head>
 <body>
 <div class="menu">
     <div class="menu-bar">
-        <a class="logo"><img src="images/logo.png" height="60" width="200" /></a>
+        <a class="logo"><img src="images/logo.png" height="70" width="210" /></a>
         <a class="menu-li" href="index.html">
             <span class="menu-icon icon-home"></span>
             <div class="menu-name">
@@ -48,7 +51,7 @@
 
 <div class="container-start">
     <section id="grid" class="grid clearfix">
-        <a href="Canvas.html" data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z">
+        <a id = "FindSketch" href="javascript:;" data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z">
             <figure>
                 <img src="images/test.jpg" />
                 <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"/></svg>
@@ -85,7 +88,22 @@
     </section>
 </div>
 <script src="js/hovers.js"></script>
+<script>
+    ;!function(){
 
+        $('#FindSketch').on('click', function(){
+            layer.open({
+                type: 2,
+                closeBtn: 0,
+                title: 'canvas',
+                shadeClose: true, //点击遮罩关闭层
+                area : ['1000px' , '900px'],
+                content: 'Canvas.html'
+            });
+        });
+
+    }();
+</script>
 <footer>
     <br><br>
     Designed and built by @Long Zhao and @Shuang Liang.<br>
