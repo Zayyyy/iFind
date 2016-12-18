@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link href="css/basic.css" rel="stylesheet" type="text/css"/>
+    <link href="css/index.css" rel="stylesheet" type="text/css"/>
+    <link href="css/start.css" rel="stylesheet" type="text/css"/>
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css"/>
+    <script src="js/snap.svg-min.js"></script>
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/indexTitle.js"></script>
+
+</head>
+<body>
+    <div class="menu">
+        <div class="menu-bar">
+            <a class="logo"><img src="images/logo.png" height="70" width="210" /></a>
+            <a class="menu-li menu-li-active" href="index.html">
+                <span class="menu-icon icon-home"></span>
+                <div class="menu-name">
+                    IFIND
+                </div>
+            </a>
+            <a class="menu-li" href="Start.html">
+                <span class="menu-icon icon-penci"></span>
+                <div class="menu-name">
+                    START
+                </div>
+            </a>
+            <a class="menu-li" href="dataset.html">
+                <span class="menu-icon icon-image"></span>
+                <div class="menu-name">
+                    DATASETS
+                </div>
+            </a>
+            <a class="menu-li" href="index.html">
+                <span class="menu-icon icon-film"></span>
+                <div class="menu-name">
+                    DEMO
+                </div>
+            </a>
+        </div>
+    </div>
+    <!--主页背景-->
+    <div class="focus-bg">
+        <div class="img1" id = "background1">
+            <h4 id="title" class="text">iFind</h4>
+            <p class="sub-text">iFind is an intelligent interaction oriented online platform, designed for multimedia sketch-based retrieval tasks.</p>
+        </div>
+        <div class="img2" id="background2">
+            <p id="title2" class="text2"> <img id="pen" src="images/pen.png" />Using a painting board,<br>sketch everything you like.</p>
+        </div>
+        <div class="img3" id="background3">
+            <p id="title3" class="text2"> <img id="magnify" src="images/magnify.png" />Go for searching different visual datasets <br>similar to your sketch.</p>
+        </div>
+    </div>
+
+
+    <!--START-->
+
+    <div class="start-header">
+        <div class="header-main">Designed for everyone,different visual dataset.</div>
+        <div class="header-sub">iFind makes sketch-based retrieval faster and easier. It's made for searching different visual data via drawing, including sketches, images and 3D shapes.</div>
+    </div>
+
+    <div class="container-start">
+        <section id="grid" class="grid clearfix">
+            <a href="Canvas.html" data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z">
+                <figure>
+                    <img src="images/test.jpg" />
+                    <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"/></svg>
+                    <figcaption>
+                        <h2>Magic Sketch Dataset</h2>
+                        <p>This dataset consists of 55 template shape classes, with 30 from engineering unit prototypes and 25 from electric circuit diagrams. Ten users are asked to follow the templates and draw two sketches for each class.</p>
+                        <button>Start a Query</button>
+                    </figcaption>
+                </figure>
+            </a>
+            <a href="Canvas.html" data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z">
+                <figure>
+                    <img src="images/test2.jpg" />
+                    <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"/></svg>
+                    <figcaption>
+                        <h2>ASD Dataset</h2>
+                        <p>This image database is carefully collected from a variety of source, mostly from image forums and image search engines. And each image in the dataset contains a salient object or a distinctive foreground object.</p>
+                        <button>Start a Query</button>
+                    </figcaption>
+                </figure>
+            </a>
+            <a href="Canvas.html" data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z">
+                <figure>
+                    <img src="images/test3.jpg" />
+                    <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"/></svg>
+                    <figcaption>
+                        <h2>Princeton Shape Benchmark</h2>
+                        <p>The Princeton Shape Benchmark (PSB) provides a repository of 3D models for evaluating shape-based retrieval algorithm. Researchers are encouraged to use these resources to produce comparisons of competing algorithms.</p>
+                        <button>Start a Query</button>
+                    </figcaption>
+                </figure>
+            </a>
+
+        </section>
+    </div>
+    <div class="container-github">
+        <div class="git-text">iFind is open source. It's hosted, developed and maintained on GitHub.</div>
+        <a href='https://github.com/garyzhao/Sketch3DToolkit' target="_blank">
+            <div class="github">
+                View the GitHub project
+            </div>
+        </a>
+    </div>
+    <script src="js/hovers.js"></script>
+    <footer>
+        <br><br>
+        Designed and built by @Long Zhao and @Shuang Liang.<br>
+        This project is supported by Shanghai Pujiang Program(No.13PJ1408200).<br>
+        Codes and data can only be used for non-comercial purpose.<br><br>
+        Currently v1.0.0 <br>
+    </footer>
+</body>
+
+</html>

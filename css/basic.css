@@ -1,0 +1,233 @@
+a{
+    text-decoration: none;
+}
+@font-face {
+    font-family: 'icomoon';
+    src:    url('fonts/icomoon.eot?6jp00p');
+    src:    url('fonts/icomoon.eot?6jp00p#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?6jp00p') format('truetype'),
+    url('fonts/icomoon.woff?6jp00p') format('woff'),
+    url('fonts/icomoon.svg?6jp00p#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+body{
+    background: rgba(110,97,117,0.2);
+    color: #333;
+    font-family: "Segoe UI",Arial, sans-serif;
+    font-size: 20px;
+
+}
+.container-github{
+    width: 100%;
+    height: 150px;
+    background: #fff;
+    -webkit-box-shadow: 1px -1px 1px rgba(0,0,0,0.2);
+    -moz-box-shadow: 1px -1px 1px rgba(0,0,0,0.2);
+    box-shadow: 1px -1px 1px rgba(0,0,0,0.2);
+}
+/**********HEAD**********/
+.menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 100;
+    background: #fff;
+    -webkit-box-shadow: 1px 3px 2px rgba(0,0,0,0.2);
+    -moz-box-shadow: 1px 3px 2px rgba(0,0,0,0.2);
+    box-shadow: 1px 3px 2px rgba(0,0,0,0.2);
+}
+.menu-bar{
+    -webkit-transition: background .1s linear;
+    margin-left: 50px;
+    background: #fff;
+    height: 80px
+}
+.logo{
+    padding-right: 400px;
+    float: left;
+    padding-top:5px;
+}
+.menu-li {
+    float: left;
+    width: 160px;
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    background: #fff;
+    margin-bottom: 4px;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+.menu-li .menu-icon{
+    font-size: 35px;
+    color: #432543;
+    text-shadow: 0 0 1px #333;
+    line-height: 60px;
+    position: absolute;
+    width: 160px;
+    text-align: center;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    transition: all 300ms linear;
+}
+.menu-li .menu-name{
+    position: absolute;
+    width: 160px;
+    height: 60px;
+    color: #432543;
+    line-height: 120px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    transition: all 300ms linear;
+
+}
+.menu-li:hover{
+    background-color: #432543;
+}
+.menu-li:hover .menu-icon{
+    color: #c5539b;
+    font-size: 120px;
+    opacity: 0.2;
+    left: -20px;
+    line-height: 80px;
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    transform: rotate(20deg);
+}
+.menu-li:hover .menu-name{
+    color: #d0378a;
+    font-size: 30px;
+    line-height: 80px;
+    opacity: 0.9;
+}
+.menu-li-active{
+    float: left;
+    width: 160px;
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    background: #432543;
+    margin-bottom: 4px;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+.menu-li-active .menu-icon{
+    font-size: 40px;
+    color: #c5539b;
+    text-shadow: 0px 0px 1px #333;
+    line-height: 60px;
+    position: absolute;
+    width: 160px;
+    text-align: center;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    transition: all 300ms linear;
+    opacity: 1;
+}
+.menu-li-active .menu-name{
+    position: absolute;
+    width: 160px;
+    height: 60px;
+    color: #fff;
+    line-height: 120px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    transition: all 300ms linear;
+
+
+}
+.icon-home:before {
+    content: "\e900";
+}
+.icon-penci:before {
+    content: "\e906";
+}
+.icon-image:before {
+    content: "\e90d";
+}
+.icon-film:before {
+    content: "\e913";
+}
+
+.icon-download3:before {
+    content: "\e9c7";
+}
+.icon-arrow-right:before {
+    content: "\ea34";
+}
+.icon-arrow-left:before {
+    content: "\ea38";
+}
+.icon-arrow-right2:before {
+    content: "\ea3c";
+}
+.icon-arrow-left2:before {
+    content: "\ea40";
+}
+.icon-circle-right:before {
+    content: "\ea42";
+}
+.icon-circle-left:before {
+    content: "\ea44";
+}
+
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+footer{
+    width: 100%;
+    height: 200px;
+    background-color: #432543;text-align: center;
+    color: white;
+
+}

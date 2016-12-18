@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dataset</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link href="css/basic.css" rel="stylesheet" type="text/css"/>
+    <link href="css/dataset.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="lightbox/css/lightbox.min.css">
+    <script src="js/jquery-3.1.0.min.js"></script>
+   <!-- <script src="js/PreView.js"></script>-->
+
+</head>
+<body>
+<div class="menu">
+    <div class="menu-bar">
+        <a class="logo"><img src="images/logo.png" height="60" width="200" /></a>
+        <a class="menu-li" href="index.html">
+            <span class="menu-icon icon-home"></span>
+            <div class="menu-name">
+                IFIND
+            </div>
+        </a>
+        <a class="menu-li" href="Start.html">
+            <span class="menu-icon icon-penci"></span>
+            <div class="menu-name">
+                START
+            </div>
+        </a>
+        <a class="menu-li menu-li-active" href="dataset.html">
+            <span class="menu-icon icon-image"></span>
+            <div class="menu-name">
+                DATASETS
+            </div>
+        </a>
+        <a class="menu-li" href="index.html">
+            <span class="menu-icon icon-film"></span>
+            <div class="menu-name">
+                DEMO
+            </div>
+        </a>
+    </div>
+</div>
+<div class="head-cont">
+    <div class="left-box">
+        <img src="images/test5.jpg" class="sketch-img">
+    </div>
+    <div class="right-box">
+        <div>The results are showing as follows.</div>
+    </div>
+</div>
+
+<div id="listing">
+    <div class="post"><a class="example-image-link" href= "images/images1.jpg" data-lightbox="example-set"><img src="images/images1.jpg" width="200" alt="" />img1</a></div>
+    <div class="post"><a class="example-image-link" href= "images/images2.jpg" data-lightbox="example-set"><img src="images/images2.jpg" width="200" alt="" />img1</a></div>
+    <div class="post"><a class="example-image-link" href= "images/images3.jpg" data-lightbox="example-set"><img src="images/images3.jpg" width="200" alt="" />img1</a></div>
+    <div class="post"><a class="example-image-link" href= "images/images4.jpg" data-lightbox="example-set"><img src="images/images4.jpg" width="200" alt="" />img1</a></div>
+    <div class="post"><a class="example-image-link" href= "images/images5.jpg" data-lightbox="example-set"><img src="images/images5.jpg" width="200" alt="" />img1</a></div>
+    <div class="post"><a class="example-image-link" href= "images/images6.jpg" data-lightbox="example-set"><img src="images/images6.jpg" width="200" alt="" />img1</a></div>
+    <div class="post"><a class="example-image-link" href= "images/images7.jpg" data-lightbox="example-set"><img src="images/images7.jpg" width="200" alt="" />img1</a></div>
+    <div class="post"><a class="example-image-link" href= "images/images8.jpg" data-lightbox="example-set"><img src="images/images8.jpg" width="200" alt="" />img1</a></div>
+    <div class="post"><a class="example-image-link" href= "images/images9.jpg" data-lightbox="example-set"><img src="images/images9.jpg" width="200" alt="" />img1</a></div>
+</div>
+<!--
+<div class="preView">
+    <div id="fullbg"></div>
+    <div id="dialog">
+        <p class="close"><a onclick="closeBg();">关闭</a></p>
+        <div class="left-box" id="left-img">
+
+        </div>
+        <div class="right-box" id="right-txt">
+            <div>details:</div>
+            <div>XXXXXXXXXXXXXXXXXXXX</div>
+        </div>
+    </div>
+</div>-->
+<script src="lightbox/js/lightbox-plus-jquery.js"></script>
+<script src="js/jquery.masonry.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var num=10;
+    var flag = true;
+    $(function(){
+        var $container = $('#listing');
+        $container.masonry({
+
+            itemSelector: '.post',
+            isFitWidth:true
+        });
+        //滚动条滚动到离底部距离50的时候触发
+        $(window).scroll(function(){
+            // 当滚动到最底部以上100像素时， 加载新内容
+            if ($(document).height() - $(this).scrollTop() - $(this).height()<50){
+                if (flag){
+                    var $boxes = $(getList());
+                    $container.append($boxes).masonry('appended',$boxes);
+                }
+            }
+        });
+    });
+    //测试获取列表
+    function getList() {
+        var boxes = [], count = parseInt(Math.random()*10);
+        for (var i=0; i < count; i++ ) {
+            num++;
+            boxes.push('<div class="post" id="images'+(num)+'"><a class="example-image-link" href= "images/'+"images"+(i+1)+'.jpg" data-lightbox="example-set"><img src="images/'+"images"+(i+1)+'.jpg" width="200" alt="" />img'+num+'</a></div>');
+        }
+        //把数组转成字符串
+        return boxes.join("");
+    };
+</script>
+
+</body>
+</html>

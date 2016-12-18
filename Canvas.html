@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name=”viewport” content=”width=device-width, initial-scale=1″ />
+    <meta charset="UTF-8">
+    <title>iFind</title>
+
+    <link href="css/normalize.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link href="css/basic.css" rel="stylesheet" type="text/css"/>
+    <link href="css/canvas.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+
+    <link rel="stylesheet" media="screen" type="text/css" href="css/colorpicker.css">
+    <link rel="stylesheet" media="screen" type="text/css" href="css/font-awesome-4.6.3/css/font-awesome.css">
+
+    <script type="text/javascript" src="js/colorpicker.js"></script>
+
+<script>
+
+    $(function() {
+        $('#colorSelector').ColorPicker({
+            onChange: function(hsb, hex, rgb) {
+                colsSign = '#'+hex;
+                ctx.fillStyle = colsSign;
+                ctx.strokeStyle = colsSign;
+                $('#colorSelector').css('backgroundColor', '#' + hex);
+            }
+
+        });
+    });
+</script>
+
+</head>
+<body>
+<div class="left-box">
+    <div class="tabbed round">
+        <ul class="option-name">
+
+            <li><h3>Settings</h3></li>
+            <li><h3>Shape</h3></li>
+            <li><h3>Tool</h3></li>
+            <li><h3>Edit</h3></li>
+        </ul>
+    </div>
+    <div class="Drawer-board">
+        <ul id="option-button">
+            <li class="first-option">
+                <button class="reset"><i class="fa fa-trash" aria-hidden="true"></i>Reset</button>
+                <button class="reset"><i class="fa fa-download" aria-hidden="true"></i>Save</button>
+                <button class="reset"><i class="fa fa-reply" aria-hidden="true"></i>Undo</button>
+                <button class="reset"><i class="fa fa-share" aria-hidden="true"></i>Redo</button>
+            </li>
+
+            <li class="tool">
+                <img src="images/brush.png" data-f="brush" />
+                <img src="images/eraser.png" data-f="eraser" />
+                <!--
+                <img src="images/Magnifier.png" data-f="magnifier" />-->
+                <img src="images/paint.png" data-f="paint" />
+                <img src="images/straw.png" data-f="straw" />
+                <!--
+                <img src="images/text.png" data-f="text" />-->
+            </li>
+            <li>
+                <img id = "arc" src="images/arc.png" data-f="arc-stroke" />
+                <img src="images/arcfill.png" data-f="arc-fill" />
+                <img src="images/poly.png" data-f="poly" />
+                <img src="images/rect.png" data-f="rect-stroke" />
+                <img src="images/rectfill.png" data-f="rect-fill" />
+                <img src="images/line.png" data-f="line" />
+            </li>
+            <li class="line">
+                <span class="Label">Width:</span>
+                <section class="select-line">
+                        <select id="s-line" style="width:100px" onchange="select()">
+                            <option value="1">1px</option>
+                            <option value="2">2px</option>
+                            <option value="4">4px</option>
+                            <option value="6">6px</option>
+                            <option value="8">8px</option>
+                            <option value="10">10px</option>
+                            <option value="12">12px</option>
+                            <option value="14">14px</option>
+                            <option value="16">16px</option>
+                            <option value="18">18px</option>
+                            <option value="24">24px</option>
+                        </select>
+                </section>
+                <span class="Label">Color:</span>
+                <section id="colorSelector">
+
+                </section>
+            </li>
+
+        </ul>
+
+        <div class="right-box" id="container">
+            <canvas id="sketch" width="700" height="700" ></canvas>
+
+        </div>
+        <a href="Start.html" class="btn-back"><span class="icon-arrow-left2"></span><div class="Back">Back</div></a>
+        <a href="dataset.html" class="btn-find"><div class="search">Search</div><span class="icon-arrow-right2"></span></a>
+    </div>
+
+</div>
+
+</body>
+<script type="text/javascript" src="js/drawer.js"></script>
+
+</html>
