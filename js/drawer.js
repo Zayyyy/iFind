@@ -125,7 +125,7 @@ s_board.onmousedown = function(event){
         ex = e.pageX,
         ey = e.pageY,
         startX = ex - this.offsetLeft,
-        startY = ey - this.offsetTop;
+        startY = ey - this.offsetTop - this.offsetParent.offsetTop;
     isMouseDown = true;
     ctx.beginPath();
     if(imgsSign == 'brush' || imgsSign == 'line'){
@@ -165,7 +165,8 @@ s_board.onmousemove = function(event){
         ex = e.pageX,
         ey = e.pageY,
         lineX = ex - this.offsetLeft,
-        lineY = ey - this.offsetTop;
+        lineY = ey - this.offsetTop-this.offsetParent.offsetTop;
+
     if(imgsSign == 'brush' || imgsSign == 'eraser'){
         if(isMouseDown){
             ctx.lineTo(lineX, lineY);

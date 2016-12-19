@@ -11,6 +11,31 @@
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="layer/layer.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+
+    <link href="css/canvas.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+
+    <link rel="stylesheet" media="screen" type="text/css" href="css/colorpicker.css">
+    <link rel="stylesheet" media="screen" type="text/css" href="css/font-awesome-4.6.3/css/font-awesome.css">
+
+    <script type="text/javascript" src="js/colorpicker.js"></script>
+
+    <script src="js/CanvasPopUpLayer.js"></script>
+    <script>
+
+        $(function() {
+            $('#colorSelector').ColorPicker({
+                onChange: function(hsb, hex, rgb) {
+                    colsSign = '#'+hex;
+                    ctx.fillStyle = colsSign;
+                    ctx.strokeStyle = colsSign;
+                    $('#colorSelector').css('backgroundColor', '#' + hex);
+                }
+
+            });
+        });
+    </script>
 </head>
 <body>
 <div class="menu">
@@ -51,7 +76,7 @@
 
 <div class="container-start">
     <section id="grid" class="grid clearfix">
-        <a id = "FindSketch" href="javascript:;" data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z">
+        <a href="javascript:showBg();" data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z">
             <figure>
                 <img src="images/test.jpg" />
                 <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"/></svg>
@@ -62,7 +87,7 @@
                 </figcaption>
             </figure>
         </a>
-        <a href="Canvas.html" data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z">
+        <a href="javascript:showBg();" data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z">
             <figure>
                 <img src="images/test2.jpg" />
                 <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"/></svg>
@@ -73,7 +98,7 @@
                 </figcaption>
             </figure>
         </a>
-        <a href="Canvas.html" data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z">
+        <a href="javascript:showBg();" data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z">
             <figure>
                 <img src="images/test3.jpg" />
                 <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"/></svg>
@@ -88,22 +113,92 @@
     </section>
 </div>
 <script src="js/hovers.js"></script>
-<script>
-    ;!function(){
 
-        $('#FindSketch').on('click', function(){
-            layer.open({
-                type: 2,
-                closeBtn: 0,
-                title: 'canvas',
-                shadeClose: true, //点击遮罩关闭层
-                area : ['1000px' , '900px'],
-                content: 'Canvas.html'
-            });
-        });
+<!--canavs board-->
+<div class="hw-overlay" id="hw-layer"></div>
+<div class="hw-layer-wrap">
+    <div class="left-box">
+        <div class = "tab-title">
+            <ul class="title-name">
+                <li><h3>SETTINGS</h3></li>
+                <li><h3>SHAPE</h3></li>
+                <li><h3>TOOL</h3></li>
+                <li><h3>EDIT</h3></li>
+            </ul>
 
-    }();
-</script>
+        </div>
+        <!--<div class="tabbed round">-->
+            <!--<ul class="option-name">-->
+                <!--<li><h3>SETTINGS</h3></li>-->
+                <!--<li><h3>SHAPE</h3></li>-->
+                <!--<li><h3>TOOL</h3></li>-->
+                <!--<li><h3>EDIT</h3></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <div class="Drawer-board">
+            <ul id="option-button">
+                <li class="first-option">
+                    <button class="reset"><i class="fa fa-trash" aria-hidden="true"></i>Reset</button>
+                    <button class="reset"><i class="fa fa-download" aria-hidden="true"></i>Save</button>
+                    <button class="reset"><i class="fa fa-reply" aria-hidden="true"></i>Undo</button>
+                    <button class="reset"><i class="fa fa-share" aria-hidden="true"></i>Redo</button>
+                </li>
+
+                <li class="tool">
+                    <img src="images/brush.png" data-f="brush" />
+                    <img src="images/eraser.png" data-f="eraser" />
+                    <!--
+                    <img src="images/Magnifier.png" data-f="magnifier" />-->
+                    <img src="images/paint.png" data-f="paint" />
+                    <img src="images/straw.png" data-f="straw" />
+                    <!--
+                    <img src="images/text.png" data-f="text" />-->
+                </li>
+                <li>
+                    <img id = "arc" src="images/arc.png" data-f="arc-stroke" />
+                    <img src="images/arcfill.png" data-f="arc-fill" />
+                    <img src="images/poly.png" data-f="poly" />
+                    <img src="images/rect.png" data-f="rect-stroke" />
+                    <img src="images/rectfill.png" data-f="rect-fill" />
+                    <img src="images/line.png" data-f="line" />
+                </li>
+                <li class="line">
+                    <span class="Label">WIDTH:</span>
+                    <section class="select-line">
+                        <select id="s-line" style="width:100px" onchange="select()">
+                            <option value="1">1px</option>
+                            <option value="2">2px</option>
+                            <option value="4">4px</option>
+                            <option value="6">6px</option>
+                            <option value="8">8px</option>
+                            <option value="10">10px</option>
+                            <option value="12">12px</option>
+                            <option value="14">14px</option>
+                            <option value="16">16px</option>
+                            <option value="18">18px</option>
+                            <option value="24">24px</option>
+                        </select>
+                    </section>
+                    <span class="Label">COLOR:</span>
+                    <section id="colorSelector">
+
+                    </section>
+                </li>
+
+            </ul>
+
+            <div class="right-box" id="container">
+                <canvas id="sketch" width="600" height="600" ></canvas>
+
+            </div>
+            <a href="javascript:closeBg();" class="btn-back"><span class="icon-arrow-left2"></span><div class="Back">Back</div></a>
+            <a href="dataset.html" class="btn-find"><div class="search">Search</div><span class="icon-arrow-right2"></span></a>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" src="js/drawer.js"></script>
+
 <footer>
     <br><br>
     Designed and built by @Long Zhao and @Shuang Liang.<br>

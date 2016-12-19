@@ -10,12 +10,12 @@
 }
 .Drawer-board{
     width: 900px;
-    height: 700px;
+    height: 750px;
     margin: 0 auto 50px;
     border-bottom-right-radius:0.5em;
     border-bottom-left-radius:0.5em;
     background-color: #fff;
-    box-shadow: 0 0 8px 3px rgba(93, 71, 139, 0.3);
+    box-shadow: 0 5px 8px 3px rgba(93, 71, 139, 0.3);
 }
 .left-box {
     font-family: Arial;
@@ -27,11 +27,12 @@ h3{
     text-align: center;
     font-size: 80%;
 
-    color: #fff;
+
 }
 
 /* Tabbed Styles */
 .tabbed {
+    color: #fff;
     width: 900px; /*与绘图板相同*/
     height: 50px;
     margin: auto;
@@ -142,6 +143,62 @@ h3{
     float: left;
 
 }*/
+
+/*start page canvas css*/
+.tab-title{
+    width: 900px; /*与绘图板相同*/
+    height: 50px;
+    margin: auto;
+    margin-top: 15px;
+    overflow: hidden;
+    background-color: #ffffff;
+
+    border-bottom: 1px solid rgba(93, 71, 139, 0.3);
+    border-top-right-radius:0.5em;
+    border-top-left-radius:0.5em;
+    box-shadow: 0 0 8px 3px rgba(93, 71, 139, 0.3);
+}
+.tab-title ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    float: left;
+    padding-left: 35px; /*左边距离玄学*/
+    list-style-type: none;
+}
+.tab-title ul * {
+    margin: 0;
+    padding: 0;
+}
+.tab-title ul li {
+
+    color:#663366;
+    display: block;
+    float: right;
+    width: 138px; /*每个选项卡的长度*/
+    padding:5px 5px 8px;
+    background-color: #ffffff;
+
+    z-index: 2;
+    position: relative;
+    cursor: pointer;
+
+}
+.tab-title ul>li:nth-child(1){
+    width: 170px; /*每个选项卡的长度*/
+}
+.tab-title ul>li:nth-child(2){
+    width: 190px; /*每个选项卡的长度*/
+
+}
+.tab-title ul>li:nth-child(3) {
+    width: 190px; /*每个选项卡的长度*/
+}
+.tab-title ul>li:nth-child(4){
+    width:  270px; /*每个选项卡的长度*/
+
+}
+
 
 #option-button{
 
@@ -336,13 +393,13 @@ canvas {
 .icon-arrow-right2{
 
     font-size: 150%;
-    line-height: 55px;
+    line-height: 50px;
     padding-right: 10px;
 }
 .icon-arrow-left2{
 
     font-size: 150%;
-    line-height: 55px;
+    line-height: 50px;
     padding-left: 15px;
 }
 .search{
